@@ -41,7 +41,7 @@
 		} else {
 			newData = dataset;
 			Input = '';
-			searchResults[0].city = null;
+
 		}
 	};
 </script>
