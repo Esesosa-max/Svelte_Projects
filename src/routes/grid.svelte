@@ -1,28 +1,50 @@
 <script>
-	import photo1 from '$lib/photo1.png';
-	import photo2 from '$lib/photo2.png';
-	import photo3 from '$lib/photo3.png';
-	import photo_4 from '$lib/photo_4.png';
-	import photo5 from '$lib/photo5.png';
-	import photo6 from '$lib/photo6.png';
+	export let newData;
+	console.log(newData);
 </script>
 
-<div class=" m-auto grid grid-cols-3 justify-stretch gap-3 mt-3 " id="grid">
-	<img src={photo1} class="col-span-1 w-full h-full rounded-lg" alt="" />
-	<img src={photo2} class="col-span-2 w-full h-full  rounded-lg " />
-	<img src={photo3} class="col-span-2 w-full h-full  rounded-lg" />
-	<img src={photo_4} class="col-span-1 w-full h-full row-span-2  rounded-lg" />
-	<img src={photo5} alt="" class="col-span-1 w-full h-full row-start-3  rounded-lg" />
-	<img src={photo6} alt="" class="col-span-1 w-full h-full  rounded-lg" />
+<div class=" m-auto mt-5" id="grid">
+	<div class="flex justify-between">
+		<h1 class="text-2xl font-bold">Stays In Finland</h1>
+		<p>{(newData && newData.length) || 12} stays</p>
+	</div>
+	<div class="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3   gap-8 mt-5 " id="grid">
+		{#each newData as data}
+			<div class="card">
+				<img src={data.photo} alt="" class="h-[267px] w-full rounded-3xl" />
+				<div class="md:flex justify-between mt-2">
+					{#if data.superHost}
+						<p
+							class="border-2 w-[110px] border-black px-1  font-bold text-sm rounded-2xl capitalize"
+						>
+							SUPER HOST
+						</p>
+					{/if}
+					<div class="flex text-gray-500">
+						<p class="mr-2">{data.type}</p>
+						{#if data.beds}
+							<p>{data.beds || ''} beds</p>
+						{/if}
+					</div>
+					<div class="flex">
+						<span class="material-symbols-outlined mr-2 text-[#EB5757]"> star </span>
+						<p>{data.rating}</p>
+					</div>
+				</div>
+				<p class="font-bold">{data.title}</p>
+			</div>
+		{/each}
+	</div>
 </div>
 
 <style>
 	#grid {
-		max-width: 900px;
+		max-width: 1200px;
+		margin: auto;
 	}
-	@media (max-width: 900px) {
+	@media (max-width: 1200px) {
 		#grid {
-			width: 90%;
+			max-width: 90%;
 		}
 	}
 </style>

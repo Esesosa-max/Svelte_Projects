@@ -5,5 +5,4 @@
 </script>
 
 <Header />
-<Grid />
 <Footer />
