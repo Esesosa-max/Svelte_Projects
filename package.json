@@ -27,6 +27,6 @@
 	"type": "module",
 	"dependencies": {
 		"@sveltejs/adapter-static": "^2.0.3",
-		"firebase": "^9.16.0"
+		"string-similarity": "^4.0.4"
 	}
 }
