@@ -19,7 +19,7 @@
       </p>
       <p class="flex items-center">
         <span class="mr-2 material-symbols-outlined">youtube_activity</span>
-        https://www.youtube.com/@techupfront
+        @techupfront
       </p>
     
 
